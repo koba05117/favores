@@ -1,0 +1,224 @@
+body{
+    text-align: center;
+    background-color: #b7b7b7;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+main {
+    flex-grow: 1;
+    max-width: 800px; 
+    margin: 20px auto;
+    padding: 10px;
+}
+
+header, footer {
+    display: flex;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    justify-content: space-between; 
+}
+
+header h1{
+    flex-grow: 1;
+    font-size: 2rem;
+    margin: 10px;
+    text-align: center;
+}
+
+header {
+    display: inline-block;
+    margin: 0;
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    text-align: center;
+}
+
+header a.regresar{
+    color: white;
+    text-decoration: none;
+}
+header a.regresar:hover {
+    color: blue;
+}
+
+h1 {
+    font-size: 2rem; 
+}
+
+p {
+    margin: 10px 0;
+    font-size: 1rem;
+}
+
+section {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    gap: 5px;
+}
+
+.favor {
+    background: white;
+    border: 1px solid #ccc;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin: 7px;
+}
+
+.favor:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+
+.koba{
+    margin: 1px;
+    color: white;
+}
+
+
+.image-link img {
+    width: 50px;
+    height: auto;
+    border-radius: 10px; 
+    transition: transform 0.3s ease; 
+}
+
+.image-link img:hover {
+    transform: scale(1.1); /* Efecto de zoom */
+}
+
+main ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+main li {
+    position: relative;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.info-botton {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 18px;
+    color: #007bff;
+    transition: transform 0.2s ease;
+}
+
+.info-button:hover {
+    transform: scale(1.2);
+}
+
+.info-box {
+    display: none;
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #007bff;
+    border-radius: 8px;
+    background-color: #e6f7ff;
+    color: #0056b3;
+    font-size: 14px;
+}
+
+#arriba{
+    margin-left: 6px;
+}
+
+#abajo{
+    margin-left: 200px;
+}
+
+
+/* --- Media Queries para dispositivos medianos (tabletas) --- */
+@media (max-width: 1024px) {
+    header {
+        justify-content: center;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    .vertical-menu {
+        width: 180px;
+    }
+}
+
+
+
+
+
+
+/* --- Media Queries para dispositivos móviles (teléfonos) --- */
+@media (max-width: 600px) {
+    header {
+        justify-content: center;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .menu-icon {
+        margin-left: 10px;
+    }
+
+    .vertical-menu {
+        position: fixed;
+        top: 0;
+        left: -200px;
+        height: 100%;
+        width: 150px;
+        background-color: #444;
+        padding-top: 20px;
+        transition: left 0.3s ease;
+    }
+
+    .vertical-menu.open {
+        left: 0;
+    }
+
+    footer {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+}
+
+.contenedor {
+    display: flex;
+    align-items: flex-start;
+}
+
+.nota{
+    display: inline-block
+}
+.negociacion{
+    margin-top: 15px;
+    font-size: 15px;
+    display: inline-block
+}

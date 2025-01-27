@@ -1,0 +1,193 @@
+body {
+    background-color: #b7b7b7;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+main {
+    flex-grow: 1;
+}
+
+header, footer {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    justify-content: space-between; 
+}
+
+header h1 {
+    flex-grow: 1;
+    font-size: 2rem;
+    margin: 0;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2rem; /* Tamaño mayor para PC */
+}
+
+
+main {
+    max-width: 800px; /* Limita el ancho en pantallas grandes */
+    margin: 20px auto;
+    padding: 10px;
+}
+
+
+.menu-icon {
+    display: flex; /* Muestra el menú hamburguesa */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    margin-left: 0; /* Asegura que las tres líneas estén alineadas a la izquierda */
+    margin-right: auto; /* Asegura que el menú se mantenga a la izquierda */
+}
+
+.menu-icon div {
+    background-color: white;
+    height: 4px;
+    border-radius: 2px;
+}
+
+.vertical-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 200px;
+    background-color: #444;
+    color: white;
+    padding-top: 20px;
+}
+
+.vertical-menu a {
+    margin-top: 10px;
+    display: block;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.vertical-menu a:hover {
+    background-color: #555;
+}
+
+
+.koba{
+    margin: 1px;
+    color: white;
+}
+
+.entornopagos{
+    display: flex;
+    align-items: center; /* Alinea verticalmente */
+}
+
+ul .bancolombia{
+    margin-top: 70px;
+}
+ul .nequi{
+    margin-top: 60px;
+    margin-bottom: -30px;
+
+}
+
+ul img{
+    margin-bottom: -170px;
+    margin-left: -29px;
+    width: 130px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.image-link img {
+    width: 50px;
+    height: auto;
+    border-radius: 10px; 
+    transition: transform 0.3s ease; 
+}
+
+.image-link img:hover {
+    transform: scale(1.1); /* Efecto de zoom */
+}
+
+.Home img{
+    margin-top: 200px;
+    margin-left: 30px;
+    width: 50px;
+    height: auto;
+    border-radius: 10px; 
+    transition: transform 0.3s ease; 
+}
+
+.Home img:hover {
+    transform: scale(1.1); 
+}
+
+
+
+
+
+/* --- Media Queries para dispositivos medianos (tabletas) --- */
+@media (max-width: 1024px) {
+    header {
+        justify-content: center;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    .vertical-menu {
+        width: 180px;
+    }
+}
+
+
+
+
+
+
+/* --- Media Queries para dispositivos móviles (teléfonos) --- */
+@media (max-width: 600px) {
+    header {
+        justify-content: center;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .menu-icon {
+        margin-left: 10px;
+    }
+
+    .vertical-menu {
+        position: fixed;
+        top: 0;
+        left: -200px;
+        height: 100%;
+        width: 150px;
+        background-color: #444;
+        padding-top: 20px;
+        transition: left 0.3s ease;
+    }
+
+    .vertical-menu.open {
+        left: 0;
+    }
+
+    footer {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+}

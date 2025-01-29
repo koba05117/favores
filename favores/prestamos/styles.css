@@ -10,7 +10,7 @@ body{
 }
 
 main {
-    flex-grow: 1; /* Ocupa el espacio restante */
+    flex-grow: 1;
     max-width: 800px; 
     margin: 20px auto;
     padding: 10px;
@@ -25,19 +25,14 @@ header, footer {
     justify-content: space-between; 
 }
 
-a.condiciones {
+
+footer a.condiciones {
     position: absolute;
-    left: 10px;
+    margin-bottom: 120px;
+    left: -1px;
     padding: 5px;
 }
 
-footer a.condiciones:hover {
-    text-decoration: underline;
-}
-
-a.condiciones:hover {
-    text-decoration: underline;
-}
 
 header h1{
     flex-grow: 1;
@@ -81,7 +76,7 @@ section {
     gap: 5px;
 }
 
-.favor {
+.prestamo {
     background: white;
     border: 1px solid #ccc;
     padding: 15px;
@@ -93,7 +88,7 @@ section {
     margin: 7px;
 }
 
-.favor:hover {
+.prestamo:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
@@ -159,12 +154,8 @@ main li {
     font-size: 14px;
 }
 
-#arriba{
-    margin-left: 6px;
-}
-
 #abajo{
-    margin-left: 200px;
+    margin-left: 160px;
 }
 
 
@@ -221,18 +212,4 @@ main li {
         font-size: 0.9rem;
         padding: 10px;
     }
-}
-
-.contenedor {
-    display: flex;
-    align-items: flex-start;
-}
-
-.nota{
-    display: inline-block
-}
-.negociacion{
-    margin-top: 15px;
-    font-size: 15px;
-    display: inline-block
 }

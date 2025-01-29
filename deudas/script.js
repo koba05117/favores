@@ -15,22 +15,16 @@ window.addEventListener('click', function(event) {
 // Datos para cada nombre
 const userDetails = {
     Danny: [
-        {Deuda: "Deuda 1: 2.000 Pesos", info: "Rodar la cama (20/01/2025)//(27/01/2025)"},
-        {Deuda: "Penalización: 200%", info: "Pasaron 7 dias, la proxima penalizacion (3/02/2025)"},
-        {Deuda: "Prestamo: 16.000 Pesos", info: "Prestamo de dinero (28/01/2025)//(04/02/2025"},
+        {Deuda: "Deuda 1: 2.000 Pesos", info: "Rodar la cama (20/01/2025)//(27/01/2025)--(20/02/2025)"},
+        {Deuda: "Penalización: 200%", info: "Pasaron 7 dias, la proxima penalizacion (3/02/2025)--(20/02/2025)"},
+        {Deuda: "Prestamo: 16.000 Pesos", info: "Prestamo de dinero (28/01/2025)//(04/02/2025)--(28/02/2025)"},
         {Deuda: "Total: 20.000 Pesos", info: "Penalización añadida"}
     ],
     Sophia: [
         {Deuda: "Deuda 1: 0 Pesos", info:"No tiene deudas"}
     ],
     Martha: [
-        {Deuda: "Deuda 1: 500 Pesos", info:"Lavar Platos (21/01/2025)//(28/01/2025)"},
-        {Deuda: "Penalización: 200%", info: "Pasaron 7 dias, la proxima penalizacion (4/02/2025)"},
-        {Deuda: "Deuda 2: 500 Pesos", info:"Llevar PC (21/01/2025)//(28/01/2025)"},
-        {Deuda: "Penalización: 200%", info: "Pasaron 7 dias, la proxima penalizacion (4/02/2025)"},
-        {Deuda: "Deuda 3: 500 Pesos", info:"Llevar Agua (21/01/2025)//(28/01/2025)"},
-        {Deuda: "Penalización: 200%", info: "Pasaron 7 dias, la proxima penalizacion (4/02/2025)"},
-        {Deuda: "Total: 3.000 Pesos", info:"Penalización añadida"}
+        {Deuda: "Deuda 1: 0 Pesos", info:"No tiene deudas"}
     ]
 };
 

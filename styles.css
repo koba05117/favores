@@ -17,7 +17,7 @@ main h1{
 }
 
 main p{
-    margin: 10px;
+    margin-top: 20px;
 }
 
 
@@ -29,6 +29,14 @@ header, footer {
     padding: 10px 20px;
     justify-content: space-between; 
 }
+
+footer a.condiciones {
+    position: absolute;
+    bottom: -77px;
+    left: -6px;
+    padding: 5px;
+}
+
 
 header h1 {
     flex-grow: 1;
@@ -107,11 +115,6 @@ header h1 {
 .Home img:hover {
     transform: scale(1.1); 
 }
-
-
-
-
-
 
 
 /* --- Media Queries para dispositivos medianos (tabletas) --- */

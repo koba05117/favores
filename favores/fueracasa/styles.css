@@ -149,6 +149,13 @@ main li {
     margin-left: 160px;
 }
 
+main a.condiciones{
+    position: fixed; 
+    bottom: 90px;
+    padding: 10px;
+    left: 10px;
+}
+
 
 /* --- Media Queries para dispositivos medianos (tabletas) --- */
 @media (max-width: 1024px) {

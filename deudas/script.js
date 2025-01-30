@@ -16,15 +16,18 @@ window.addEventListener('click', function(event) {
 const userDetails = {
     Danny: [
         {Deuda: "Deuda 1: 2.000 Pesos", info: "Rodar la cama (20/01/2025)//(27/01/2025)--(20/02/2025)"},
+
         {Deuda: "Penalización: 200%", info: "Pasaron 7 dias, la proxima penalizacion (3/02/2025)--(20/02/2025)"},
+
         {Deuda: "Prestamo: 16.000 Pesos", info: "Prestamo de dinero (28/01/2025)//(04/02/2025)--(28/02/2025)"},
+
         {Deuda: "Total: 20.000 Pesos", info: "Penalización añadida"}
     ],
     Sophia: [
         {Deuda: "Deuda 1: 0 Pesos", info:"No tiene deudas"}
     ],
     Martha: [
-        {Deuda: "Deuda 1: 0 Pesos", info:"No tiene deudas"}
+        {Deuda: "Prestamo 1: 10 Pesos", info:"Prestamo de dinero (30/01/2025)//(06/02/2025)--(30/02/2025)"}
     ]
 };
 

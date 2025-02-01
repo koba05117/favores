@@ -27,7 +27,8 @@ const userDetails = {
         {Deuda: "Deuda 1: 0 Pesos", info:"No tiene deudas"}
     ],
     Martha: [
-        {Deuda: "Prestamo 1: 10 Pesos", info:"Prestamo de dinero (30/01/2025)//(06/02/2025)--(30/02/2025)"}
+        {Deuda: "Prestamo 1: 10 Pesos", info:"Prestamo de dinero (30/01/2025)//(06/02/2025)--(30/02/2025)"},
+        {Deuda: "Deuda 1: 800 Pesos", info: "Llevar 2 vasos de agua (01/02/2025)//(08/02/2025)--(01/03/2025)"}
     ]
 };
 

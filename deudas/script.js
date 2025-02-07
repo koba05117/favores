@@ -19,16 +19,17 @@ const userDetails = {
 
         {Deuda: "Penalización: 200%", info: "Pasaron 7 dias, la proxima penalizacion (3/02/2025)--(20/02/2025)"},
 
-        {Deuda: "Prestamo: 16.000 Pesos", info: "Prestamo de dinero (28/01/2025)//(04/02/2025)--(28/02/2025)"},
+        {Deuda: "Penalización: 150%", info: "Pasaron 2 semanas (14 dias), la proxima penalizacion (10/02/2025)--(20/02/2025)"},
 
-        {Deuda: "Total: 20.000 Pesos", info: "Penalización añadida"}
+        {Deuda: "Deuda 2: 10.000 Pesos", info: "Ir al sao a sacar dinero (05/02/2025)//(12/02/2025)--(05/03/2025)"},
+
+        {Deuda: "Total: 16.000 Pesos", info: "Penalización añadida"}
     ],
     Sophia: [
-        {Deuda: "Deuda 1: 0 Pesos", info:"No tiene deudas"}
+        {Deuda: "No ha solicitado", info:"N/A"}
     ],
     Martha: [
-        {Deuda: "Prestamo 1: 10 Pesos", info:"Prestamo de dinero (30/01/2025)//(06/02/2025)--(30/02/2025)"},
-        {Deuda: "Deuda 1: 800 Pesos", info: "Llevar 2 vasos de agua (01/02/2025)//(08/02/2025)--(01/03/2025)"}
+        {Deuda: "Sin deuda", info:"Total pagado"}
     ]
 };
 

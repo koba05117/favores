@@ -30,11 +30,20 @@ header, footer {
     justify-content: space-between; 
 }
 
-footer a.condiciones {
+footer{
+    margin-top: 50px;
+}
+
+
+a.condiciones {
     position: absolute;
-    bottom: -77px;
-    left: -6px;
+    margin-top: -113px;
+    left: 0;
     padding: 5px;
+}
+
+footer a.condiciones:hover {
+    text-decoration: underline;
 }
 
 

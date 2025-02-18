@@ -15,23 +15,21 @@ window.addEventListener('click', function(event) {
 // Datos para cada nombre
 const userDetails = {
     Danny: [
-        {Deuda: "Deuda 1: 2.000 Pesos", info: "Rodar la cama (20/01/2025)//(27/01/2025)--(20/02/2025)"},
+        //Deuda1
 
-        {Deuda: "Penalización (deuda1): 200%", info: "Pasaron 7 dias, la proxima penalizacion (3/02/2025)--(20/02/2025)"},
+        {Deuda: "Deuda 1: 10.000 Pesos", info: "Ir al sao a sacar dinero (05/02/2025)//(12/02/2025)--(05/03/2025)"},
 
-        {Deuda: "Penalización (deuda1): 150%", info: "Pasaron 2 semanas (14 dias), la proxima penalizacion (10/02/2025)--(20/02/2025)"},
+        {Deuda: "Penalización: 2,500 Pesos", info: "Pasaron 7 dias, la proxima penalización (19/02/2025)--(05/03/2025)"},
 
-        {Deuda: "Penalización (deuda1): 150%", info: "Pasaron 3 semanas (21 dias), la ultima penalización (20/02/2025)"},
+        {Deuda: "Penalización: 150%", info: "Pasaron 2 semanas (14 dias), la proxima penalización (26/02/2025)--(05/03/2025)"},
 
-        {Deuda: "Deuda 2: 10.000 Pesos", info: "Ir al sao a sacar dinero (05/02/2025)//(12/02/2025)--(05/03/2025)"},
+        {Deuda: "Penalización (TOTAL): 18.750 Pesos", info: "total de deuda + penalización"},
 
-        {Deuda: "Penalización (deuda2): 200%", info: "Pasaron 7 dias, la proxima penalización (19/02/2025)--(05/03/2025)"},
+        //Deuda2
 
-        {Deuda: "Penalización (deuda2): 150%", info: "Pasaron 2 semanas (14 dias), la proxima penalización (26/02/2025)--(05/03/2025)"},
+        {Deuda: "Deuda 2: 2.000 Pesos", info: "Me despertó para quitarle los tornillos a la licuadora (17/02/2025)//(24/01/2025)--(17/03/2025)"},
 
-        {Deuda: "Adelantó 40 mil pesos", info: "Fue para estudio pero igual se lo agrego acá-."},
-
-        {Deuda: "Total: 17 mil Pesos", info: "Penalización añadida + 40k"}
+        {Deuda: "Total: 20.750 Pesos", info: "Penalización añadida"}
     ],
     Sophia: [
         {Deuda: "No ha solicitado", info:"N/A"}
@@ -41,44 +39,82 @@ const userDetails = {
     ]
 };
 
-// Mostrar las deudas al hacer clic en un nombre
+// Mostrar las deudas agrupadas al hacer clic en un nombre
 document.querySelectorAll(".name-item").forEach((item) => {
     item.addEventListener("click", (event) => {
         event.stopPropagation(); // Evita que el clic cierre el contenedor
 
         const name = item.dataset.name;
-
-        // Actualiza el contenido del contenedor de detalles
         const detailsContainer = document.getElementById("detailsContainer");
-        detailsContainer.innerHTML = `
-            <h3>Deudas de ${name}</h3>
-            <ul>
-                ${userDetails[name].map((debt, index) => `
-                    <li>
-                        ${debt.Deuda} 
-                        <button class="info-button" onclick="toggleDebtDetails(event, ${index}, '${name}')">➔</button>
-                        <div class="info-box" id="info-box-${name}-${index}" style="display: none;">
-                            ${debt.info}  <!-- Información personalizada -->
-                        </div>
-                    </li>
-                `).join("")}
-            </ul>`;
+        
+        // Agrupar deudas: cada deuda "normal" se asocia con las penalizaciones que le siguen
+        let groups = [];
+        let i = 0;
+        const debts = userDetails[name];
+        while (i < debts.length) {
+            // Si el elemento NO es una penalización, es el inicio de un grupo
+            if (!debts[i].Deuda.includes("Penalización")) {
+                let group = { normal: debts[i], penalties: [] };
+                i++;
+                // Mientras los siguientes elementos sean penalizaciones, agrégalos al grupo
+                while (i < debts.length && debts[i].Deuda.includes("Penalización")) {
+                    group.penalties.push(debts[i]);
+                    i++;
+                }
+                groups.push(group);
+            } else {
+                // En caso poco probable de encontrar una penalización sin deuda normal previa
+                groups.push({ normal: debts[i], penalties: [] });
+                i++;
+            }
+        }
+        
+        // Construir el HTML para cada grupo
+        let html = `<h3>Deudas de ${name}</h3>`;
+        groups.forEach((group, index) => {
+            html += `<div class="debt-group" style="margin-bottom: 15px; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+                        <div class="normal-debt">
+                            <strong>${group.normal.Deuda}</strong><br>
+                            <span>${group.normal.info}</span>
+                        </div>`;
+            if (group.penalties.length > 0) {
+                html += `<button class="penalty-toggle-button" onclick="toggleGroupPenalties(${index}, '${name}', this)" style="margin-top: 5px;">Mostrar Penalizaciones</button>
+                         <div class="penalties-container" id="penalties-container-${name}-${index}" style="display: none; margin-top: 5px; padding: 5px; background-color: #f9f9f9; border-radius: 5px;">
+                            <ul style="margin: 0; padding-left: 20px;">
+                                ${group.penalties.map(p => `<li><strong>${p.Deuda}</strong><br><span>${p.info}</span></li>`).join('')}
+                            </ul>
+                         </div>`;
+            }
+            html += `</div>`;
+        });
+        detailsContainer.innerHTML = html;
         detailsContainer.style.display = "block";
     });
 });
 
-// Función para alternar entre mostrar/ocultar el recuadro de información
+// Función para alternar la visualización de las penalizaciones de cada deuda
+function toggleGroupPenalties(groupIndex, name, button) {
+    const penaltiesContainer = document.getElementById(`penalties-container-${name}-${groupIndex}`);
+    if (penaltiesContainer.style.display === "none") {
+        penaltiesContainer.style.display = "block";
+        button.innerText = "Ocultar Penalizaciones";
+    } else {
+        penaltiesContainer.style.display = "none";
+        button.innerText = "Mostrar Penalizaciones";
+    }
+}
+
+// Conservamos la función para alternar el recuadro de información individual (si se requiere en otros contextos)
 function toggleDebtDetails(event, index, name) {
     const button = event.target;
     const infoBox = document.getElementById(`info-box-${name}-${index}`);
 
-    // Cambiar entre mostrar/ocultar el recuadro de información
     if (infoBox.style.display === "none") {
-        infoBox.style.display = "block"; // Mostrar información
-        button.innerHTML = "⬇️"; // Cambio a flecha hacia abajo cuando se abre
+        infoBox.style.display = "block";
+        button.innerHTML = "⬇️";
     } else {
-        infoBox.style.display = "none"; // Ocultar información
-        button.innerHTML = "➔"; // Flecha a la derecha cuando se cierra
+        infoBox.style.display = "none";
+        button.innerHTML = "➔";
     }
 }
 

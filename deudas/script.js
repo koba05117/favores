@@ -29,7 +29,12 @@ const userDetails = {
 
         {Deuda: "Deuda 2: 2.000 Pesos", info: "Me despertó para quitarle los tornillos a la licuadora (17/02/2025)//(24/01/2025)--(17/03/2025)"},
 
-        {Deuda: "Total: 20.750 Pesos", info: "Penalización añadida"}
+        //Deuda3
+
+        {Deuda: "Deuda 3: 18.000 Pesos", info: "10k + 8k por fila de espera (25Minutos)"},
+
+        //TOTAL DE TODO
+        {Deuda: "Total: 38.750 Pesos", info: "Penalización añadida"}
     ],
     Sophia: [
         {Deuda: "No ha solicitado", info:"N/A"}

@@ -23,18 +23,34 @@ const userDetails = {
 
         {Deuda: "Penalización: 150%", info: "Pasaron 2 semanas (14 dias), la proxima penalización (26/02/2025)--(05/03/2025)"},
 
-        {Deuda: "Penalización (TOTAL): 18.750 Pesos", info: "total de deuda + penalización"},
+        {Deuda: "Penalización: 150%", info: "Pasaron 3 semanas (21 dias), la proxima penalización --(05/03/2025)"},
+
+        {Deuda: "Penalización (TOTAL): 28,125 Pesos", info: "total de deuda + penalización"},
 
         //Deuda2
 
         {Deuda: "Deuda 2: 2.000 Pesos", info: "Me despertó para quitarle los tornillos a la licuadora (17/02/2025)//(24/01/2025)--(17/03/2025)"},
 
+        {Deuda: "Penalización: 200%", info: "Pasaron 7 dias, la proxima penalización (24/02/2025)--(17/03/2025)"},
+
+        {Deuda: "Penalización: 150%", info: "Pasaron 14 dias, la proxima penalización (3/03/2025)--(17/03/2025)"},
+
+        {Deuda: "Penalización (TOTAL): 6,000 Pesos ", info: "total de deuda + penalización"},
+
         //Deuda3
 
-        {Deuda: "Deuda 3: 18.000 Pesos", info: "10k + 8k por fila de espera (25Minutos)"},
+        {Deuda: "Deuda 3: 18.000 Pesos", info: "10k + 8k por fila de espera (25Minutos) (18/02/2025)//(25/02/2025)--(18/03/2025)"},
+
+        {Deuda: "Deuda 3: 200%", info: "Pasaron 7 dias, la proxima penalización (4/03/2025)--(18/03/2025)"},
+
+        {Deuda: "Penalización (TOTAL): 36,000 Pesos", info: "total de deuda + penalización"},
+
+        //Deuda4
+
+        {Deuda: "Deuda 4: 10.000 Pesos", info: "Ir al sao a sacar dinero (25/02/2025)//(04/03/2025)--(25/03/2025)"},
 
         //TOTAL DE TODO
-        {Deuda: "Total: 38.750 Pesos", info: "Penalización añadida"}
+        {Deuda: "Total: 80,125 Pesos", info: "Penalización añadida"}
     ],
     Sophia: [
         {Deuda: "No ha solicitado", info:"N/A"}
